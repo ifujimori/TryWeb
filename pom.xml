@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>jp.trypj</groupId>
-  <artifactId>tryweb2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>basicWebapp</name>
- 
-  <!-- Start elements of Oracle products and licenses -->
-  <description>Oracle WebLogic Maven Archetype</description>
-  <url>http://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/suite/overview/index.html</url>
-  <inceptionYear>1997</inceptionYear>
- 
-  <organization>
-    <name>Oracle America, Inc.</name>
-    <url>http://www.oracle.com</url>
-  </organization>
-  <licenses>
-    <license>
-      <name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jp.trypj</groupId>
+	<artifactId>tryweb2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>basicWebapp</name>
+
+	<!-- Start elements of Oracle products and licenses -->
+	<description>Oracle WebLogic Maven Archetype</description>
+	<url>http://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/suite/overview/index.html</url>
+	<inceptionYear>1997</inceptionYear>
+
+	<organization>
+		<name>Oracle America, Inc.</name>
+		<url>http://www.oracle.com</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>
 	The "Oracle Technology Network License Agreement - Oracle 
         Maven Repository" is the license for this Project Object 
 	Model (POM) file and the associated software and documentation
@@ -27,9 +28,9 @@
 	software and documentation.  Please refer to the comments below
 	for additional information.
       </name>
-      <url>https://www.oracle.com/webapps/maven/register/license.html</url>
-      <distribution>repo</distribution>
-      <comments> 
+			<url>https://www.oracle.com/webapps/maven/register/license.html</url>
+			<distribution>repo</distribution>
+			<comments> 
 	Copyright (c) 2014, 2015, Oracle and/or its affiliates. All rights
 	reserved.
  
@@ -99,85 +100,90 @@
 	content, products, or services, except as set forth in an applicable
 	agreement between you and Oracle.
       </comments>
-    </license>
-  </licenses>
-  <!-- End elements of Oracle products and licenses -->
-  
-  <parent>
-    <groupId>com.oracle.weblogic.archetype</groupId>
-    <artifactId>wls-common</artifactId>
-    <version>12.2.1-2-0</version>
-  </parent>
-  <dependencies>
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-web-api</artifactId>
-      <version>7.0</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>basicWebapp</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.1.1</version>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.oracle.weblogic</groupId> 
-        <artifactId>weblogic-maven-plugin</artifactId> 
-        <version>12.2.1-2-0</version> 
-        <!--
-        You can find and redefine the following variables in the parent pom file arccording to your environment.
-  
-        oracleMiddlewareHome
-        oracleServerUrl
-        oracleUsername
-        oraclePassword
-        oracleServerName
-        -->
-        <configuration> 
-          <middlewareHome>${oracleMiddlewareHome}</middlewareHome>
-        </configuration> 
-        <executions>
-          <!--Deploy the application to the server-->
-          <execution>
-            <phase>pre-integration-test</phase> 
-            <goals> 
-              <goal>deploy</goal> 
-            </goals>
-            <configuration> 
-              <!--The admin URL where the app is deployed. Here use the plugin's default value t3://localhost:7001-->
-              <!--adminurl>${oracleServerUrl}</adminurl-->
-              <!-- 
-              <user>${oracleUsername}</user> 
-              <password>${oraclePassword}</password>
-               -->
-              <user>weblogic</user> 
-              <password>weblogic1</password>
-              <!--The location of the file or directory to be deployed-->
-              <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
-              <!--The target servers where the application is deployed. Here use the plugin's default value AdminServer-->
-              <!--targets>${oracleServerName}</targets-->
-              <verbose>true</verbose> 
-              <name>${project.build.finalName}</name>
-            </configuration> 
-          </execution> 
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+		</license>
+	</licenses>
+	<!-- End elements of Oracle products and licenses -->
+
+	<parent>
+		<groupId>com.oracle.weblogic.archetype</groupId>
+		<artifactId>wls-common</artifactId>
+		<version>12.2.1-2-0</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.5.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+			<version>2.5.2</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>basicWebapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.oracle.weblogic</groupId>
+				<artifactId>weblogic-maven-plugin</artifactId>
+				<version>12.2.1-2-0</version>
+				<!-- You can find and redefine the following variables in the parent 
+					pom file arccording to your environment. oracleMiddlewareHome oracleServerUrl 
+					oracleUsername oraclePassword oracleServerName -->
+				<configuration>
+					<middlewareHome>${oracleMiddlewareHome}</middlewareHome>
+				</configuration>
+				<executions>
+					<!--Deploy the application to the server -->
+					<execution>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<!--The admin URL where the app is deployed. Here use the plugin's 
+								default value t3://localhost:7001 -->
+							<!--adminurl>${oracleServerUrl}</adminurl -->
+							<!-- <user>${oracleUsername}</user> <password>${oraclePassword}</password> -->
+							<user>weblogic</user>
+							<password>weblogic1</password>
+							<!--The location of the file or directory to be deployed -->
+							<source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+							<!--The target servers where the application is deployed. Here use 
+								the plugin's default value AdminServer -->
+							<!--targets>${oracleServerName}</targets -->
+							<verbose>true</verbose>
+							<name>${project.build.finalName}</name>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

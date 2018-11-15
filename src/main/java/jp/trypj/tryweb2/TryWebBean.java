@@ -18,7 +18,7 @@ import java.util.HashMap;
 public class TryWebBean {
 
 
-	private String name = "ABCDE";
+	private String name = "ABCDEZ";
 
 
 	public String getHello() {
