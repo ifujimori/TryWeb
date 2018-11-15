@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -26,7 +26,7 @@
                     <h:inputText id="name" value="#{accountBean.name}" required="true" requiredMessage="Please enter your Account Name!" size="20"/>
                     <h:message for="name" errorClass="alert-error" infoClass="alert-info"></h:message>
 
-                    <label>Amount</label>
+                    <label>Amount2</label>
                     <h:inputText id="amount" value="#{accountBean.amount}" required="true" requiredMessage="Please enter the amount your want to deposit!" size="10"/>
 
                     <h:message for="amount" errorClass="alert-error" infoClass="alert-info"></h:message>
@@ -39,12 +39,12 @@
                     </div>
 
                 </h:form>
-            </div>
+            </div>456#{tryWebBean.hello}#{tryWebBean.name}
         </ui:define>
 
         <ui:define name="footer">   
             <footer>
-                <p>&copy; Company 2015</p>
+                <p><h:outputText value="&amp;copy;" escape="false"/> Company 2015</p>
             </footer>
         </ui:define>
     </ui:composition>
